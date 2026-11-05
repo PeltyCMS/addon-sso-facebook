@@ -1,31 +1,41 @@
 # Facebook
 
-Official **PeltyCMS** `sso` WASM addon (`sso-facebook`).
+Sign in to PeltyCMS with Facebook
 
-## Install
+Official **single sign-on** for [PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) — identifier `sso-facebook`.
 
-1. Open Pelty Admin → Addons → Marketplace
-2. Set registry URL to `https://market.mythicalsystems.org/api/pelty/addons/registry.json`
-3. Download **Facebook**
+## Why this addon
 
-Marketplace: https://market.mythicalsystems.org/marketplace/product/sso-facebook  
-Product ID (CI): `91`
+Teams that want one-click login with an identity provider customers already use.
 
-## Develop
+## Features
 
-This repository is a git submodule of [MythicalLTD/PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) at `extensions/addons/sso-facebook`.
+- Client and staff sign-in with **Facebook**
+- OAuth / OIDC redirect + session handled by Pelty
+- Account linking for existing customers
+- Sandboxed WASM SSO provider
 
-```bash
-# from the PeltyCMS monorepo
-cargo xtask addons sso-facebook
-```
+## How it works
 
-## Release (Mythic Marketplace)
+1. Install **Facebook** from the [Mythical marketplace](https://market.mythicalsystems.org/marketplace/product/sso-facebook) (or Pelty Admin → Addons → Marketplace).
+2. Open Pelty Admin and enter your Facebook credentials in the addon settings.
+3. Attach it to the products / forms / login flows you care about.
+4. New orders and sign-ins use Facebook automatically.
 
-Same flow as [featherpanel-com/PterodactylPanelApi](https://github.com/featherpanel-com/PterodactylPanelApi):
+## Requirements
 
-1. Repo secrets: `MYTHIC_PRODUCT_ID`, `MYTHIC_RELEASE_TOKEN`
-2. Repo variable: `ADDON_DIR=sso-facebook`
-3. Actions → **Release Addon** → Run workflow
+- A running PeltyCMS panel with WASM addons enabled
+- Valid Facebook API / OAuth / panel credentials (depending on the integration)
+- Outbound HTTPS from the panel to Facebook
 
-Publishes the packed `sso-facebook.zip` via `MythicalLTD/.github/actions/publish-release@v1` and creates a GitHub Release.
+## Get it
+
+[Facebook on Mythical Marketplace](https://market.mythicalsystems.org/marketplace/product/sso-facebook)
+
+Free official build. Source for this package lives in this repository.
+
+## Support
+
+- Marketplace product page: https://market.mythicalsystems.org/marketplace/product/sso-facebook
+- PeltyCMS core: https://github.com/MythicalLTD/PeltyCMS
+- Issues for this addon: use this repo’s Issues tab
